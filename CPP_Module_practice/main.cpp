@@ -1,25 +1,50 @@
+#include <tensorflow/core/public/session.h>
+#include <tensorflow/core/protobuf/meta_graph.pb.h>
 
-#include <torch/script.h> // One-stop header.
-
-#include <iostream>
-#include <memory>
-
-
-int main(int argc, const char* argv[]) {
-    if (argc != 2) {
-        std::cerr << "usage: example-app <path-to-exported-script-module>\n";
-        return -1;
-    }
+using namespace std;
+using namespace tensorflow;
 
 
-    torch::jit::script::Module module;
-    try {
-        module = torch::jit::load(argv[1]);
-    }
-    catch (const c10::Error& e) {
-        std::cerr << "error loading the model\n";
-        return -1;
-    }
+// set up your input paths
+// это не путь до файлов - только до директории с файлами чекпоинта
+const string pathToGraph = "models/my-model.meta"
+const string checkpointPath = "models/my-model";
 
-    std::cout << "ok\n";
+
+auto session = NewSession(SessionOptions());
+if (session == nullptr) {
+    throw runtime_error("Could not create Tensorflow session.");
 }
+
+Status status;
+
+// Read in the protobuf graph we exported
+MetaGraphDef graph_def;
+status = ReadBinaryProto(Env::Default(), pathToGraph, &graph_def);
+if (!status.ok()) {
+    throw runtime_error("Error reading graph definition from " + pathToGraph + ": " + status.ToString());
+}
+
+// Add the graph to the session
+status = session->Create(graph_def.graph_def());
+if (!status.ok()) {
+    throw runtime_error("Error creating graph: " + status.ToStringко());
+}
+
+// Read weights from the saved checkpoint
+Tensor checkpointPathTensor(DT_STRING, TensorShape());
+checkpointPathTensor.scalar<std::string>()() = checkpointPath;
+status = session->Run(
+    { { graph_def.saver_def().filename_tensor_name(), checkpointPathTensor }, },
+    {},
+    { graph_def.saver_def().restore_op_name() },
+    nullptr);
+if (!status.ok()) {
+    throw runtime_error("Error loading checkpoint from " + checkpointPath + ": " + status.ToString());
+}
+
+// and run the inference to your liking
+auto feedDict = ...
+auto outputOps = ...
+std::vector<tensorflow::Tensor> outputTensors;
+status = session->Run(feedDict, outputOps, {}, &outputTensors);

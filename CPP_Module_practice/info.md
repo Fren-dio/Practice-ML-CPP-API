@@ -1,29 +1,28 @@
 # About
 
-Этот файл содержит информацию, которая использовалась в процессе написания кода в файле main.cpp
-Библиотеки, которые можно использовать:
+This file contains information that was used in the process of writing the code in the file main.cpp
+Libraries that can be used:
 - libtorch
 - boost
 - tensorflow
-- Проекты VS формата .NET Core (.NET Network) - но это больше именно про обучение
+- Projects of VS format .NET Core (.NET Network) - but it's more about learning
 
-В конце заголовок Links - там ссылки на ряд источников, которые использваолись при поиске и сборе информации о ML библиотеках с API на С++
-часть ссылок - туториалы по установке
+At the end of the Links header, there are links to a number of sources that were used in the search and collection of information about ML libraries from the API to C++
+. Part of the links are installation tutorials
 
 # Some errors
-Сейчас есть некоторые проблемы при установке libtorch... Но в ближайшее время надеюсь все решить
-Ключевая проблема во всем этом - все библиотеки ML с API на С++ слабо приспособлен для работы под Windows. И настройка всего этого на винде напоминает танцы с бубном и русскую рулетку.
-Поэтому в ближайшие дни буду пытаться ставить все это в VM Virtual Box под Linux-ом или, если это тоже не увенчачется успехом - буду запускать конетйнер и настраивать все там.
-Самый крайний вариант - выделение и установка параллельно с основной ОС дополнительной (Linux) и установка и наладка требуемых библиотек там.
+There are some problems installing libtorch right now... But I hope to solve everything in the near future
+The key problem in all this is that all ML libraries with the C++ API are poorly adapted to work under Windows. And setting all this up on Windows is like dancing with a tambourine and Russian roulette.
+Therefore, in the coming days I will try to put all this in the VirtualBox VM under Linux, or if this also fails, I will run the container and configure everything there.
+The most extreme option is to allocate and install an additional one (Linux) in parallel with the main OS and install and configure the required libraries there.
 
-
-# Запасной вариант
-Есть библиотека tensorflow с API на С++
+# Backup option
+There is a tensorflow library with an API in C++
 https://stackoverflow.com/questions/41070330/is-it-possible-to-use-tensorflow-c-api-on-windows
- - это инструкции по установке
+ - these are the installation instructions
 
 
- # Фрагменты кода
+# Code snippets
  ## TensorFlow
  https://stackoverflow.com/questions/35508866/tensorflow-different-ways-to-export-and-run-graph-in-c/43639305#43639305
  ```
@@ -88,7 +87,7 @@ status = session->Run(feedDict, outputOps, {}, &outputTensors);
  ```
 
 
- Пример кода с инференсом + репозиторий (можно склонировать и более подробно полазить, если будет нужно)
+ Code example with interest + repository (you can clone and climb in more detail if necessary)
  https://github.com/shijungg/tensorflow-cpp-inference/tree/master
 
  ```
@@ -164,11 +163,11 @@ int main(int argc, char** argv )
   return 0;
 }
  ```
- OpenCv - для нас вприниципе лишнее. Машинное зрение можно из кода убрать. (полный вариант на гите)
- Поэтому дальше будут фрагменты без кода без OpenCv, которые можно вставить в программу без значительных изменений 
- + подойдут для разбора и изучения методов, которые используются для стандартных операций
+OpenCV is superfluous for us in principle. Machine vision can be removed from the code. (full version on gita)
+ Therefore, there will be fragments without OpenCV code that can be inserted into the program without significant changes. 
+ + suitable for analyzing and studying the methods that are used for standard operations
 
- Загрузка модели (единственное, здесь .pb формат в примере)
+ Loading the model (the only thing here is the .pb format in the example)
  ```
   string model_path = "../model.pb";
   GraphDef graphdef;
@@ -195,9 +194,9 @@ int main(int argc, char** argv )
   cout << "INFO: Session successfully created!"<< endl;
  ```
 
- Проверка корректности сессии
- Заполняется output_tensors - он используется в выводе данных
- По сути функционал - только первая строка, остальное обработка исключительных ситуаций
+Checking the correctness of the session
+ output_tensors is filled in - it is used in data output
+, In fact, the functionality is only the first line, the rest is handling exceptional situations
  ```
   Status status_run = session->Run({{input_node_name, input_tensor}}, {output_node_name}, {}, &output_tensors);
   if (!status_run.ok()) {
@@ -274,29 +273,29 @@ https://caffe2.ai/doxygen-c/html/classes.html
 
 https://discuss.pytorch.org/t/is-there-a-way-to-read-pt-files-in-c/34392
 
-Есть ли способ прочитать файлы .pt на C ++ без оболочки python?
+Is there a way to read the files.pt in C++ without a python shell?
 
-ANSWER: Это поддерживается для PyTorch 1.0, и в этом руководстве https://pytorch.org/tutorials/advanced/cpp_export.html лучше всего объясняется, как загрузить модель PyTorch на C ++.
+ANSWER: This is supported for PyTorch 1.0, and in this guide https://pytorch.org/tutorials/advanced/cpp_export.html the best explanation is how to load the PyTorch model in C++.
 
- - здесь первые 2 шага уже выполнены на стороне python 
+ - here the first 2 steps have already been completed on the python side 
 
-- смотреть с шага 3
-
-
+- watch from step 3
 
 
 
-Для работы с tensorflow нужна библиотека libtorch:
 
-Установить vcpkg по инструкции: https://learn.microsoft.com/ru-ru/vcpkg/get_started/get-started-vs?pivots=shell-cmd
 
-Установить libtorch:  vcpkg install libtorch:x64-windows
+To work with tensorflow, you need the libtorch library:
+
+Install vcpkg according to the instructions: https://learn.microsoft.com/ru-ru/vcpkg/get_started/get-started-vs?pivots=shell-cmd
+
+Install libtorch: vcpkg install libtorch:x64-windows
 
 
 https://habr.com/ru/companies/ods/articles/480328/
 
 
-Примеры кода:
+Code examples:
 https://discuss.pytorch.org/t/libtorch-how-to-save-model-in-mnist-cpp-example/34234/5
 
 
@@ -306,8 +305,8 @@ https://discuss.pytorch.org/t/libtorch-how-to-save-model-in-mnist-cpp-example/34
 
 # Formats
 
-Checkpoint (.ckpt) — это двоичный формат, который используется для сохранения и восстановления моделей TensorFlow.
+Checkpoint (.ckpt) is a binary format that is used to save and restore TensorFlow models.
 
-Файлы checkpoint сохраняют значения всех параметров модели, а также состояние оптимизатора, чтобы можно было возобновить обучение с той же точки.
+Checkpoint files store the values of all model parameters, as well as the state of the optimizer, so that training can be resumed from the same point.
 
-Checkpoint-файлы могут быть довольно большими, поэтому они не подходят для сохранения и загрузки моделей для развёртывания.
+Checkpoint files can be quite large, so they are not suitable for saving and loading models for deployment.

@@ -1,0 +1,2 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\kulma\gitRepository\Practice\5 semestr\Practice-ML-CPP-API\CPP_Module_practice\ConsoleApplication1\ConsoleApplication1.cpp(2,10): error C1083: Не удается открыть файл включение: torch.h: No such file or directory,
