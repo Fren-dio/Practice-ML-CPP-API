@@ -3,28 +3,63 @@
   "WorkspaceRootPath": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{45FF9B55-4423-4ADF-8796-85EA6C16B038}|ConsoleApplication1.vcxproj|C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\example.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{45FF9B55-4423-4ADF-8796-85EA6C16B038}|ConsoleApplication1.vcxproj|solutionrelative:example.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5F3D935-6788-4D60-8D3B-1B2C820C4B37}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{B5F3D935-6788-4D60-8D3B-1B2C820C4B37}|C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\utils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5F3D935-6788-4D60-8D3B-1B2C820C4B37}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{B5F3D935-6788-4D60-8D3B-1B2C820C4B37}|solutionrelative:utils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45FF9B55-4423-4ADF-8796-85EA6C16B038}|ConsoleApplication1.vcxproj|C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{45FF9B55-4423-4ADF-8796-85EA6C16B038}|ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "utils.cpp",
+              "DocumentMoniker": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\utils.cpp",
+              "RelativeDocumentMoniker": "utils.cpp",
+              "ToolTip": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\utils.cpp",
+              "RelativeToolTip": "utils.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-02T17:15:12.815Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "example.cpp",
+              "DocumentMoniker": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\example.cpp",
+              "RelativeDocumentMoniker": "example.cpp",
+              "ToolTip": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\example.cpp",
+              "RelativeToolTip": "example.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-02T16:44:17.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ConsoleApplication1.cpp",
               "DocumentMoniker": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\ConsoleApplication1.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1.cpp",
               "ToolTip": "C:\\Users\\kulma\\gitRepository\\Practice\\5 semestr\\Practice-ML-CPP-API\\CPP_Module_practice\\ConsoleApplication1\\ConsoleApplication1.cpp",
               "RelativeToolTip": "ConsoleApplication1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-01T19:00:08.708Z",
               "EditorCaption": ""
