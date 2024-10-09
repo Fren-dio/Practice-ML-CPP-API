@@ -1,4 +1,0 @@
-﻿  ConsoleApplication1.cpp
-C:\Users\kulma\source\libtorch-win-shared-with-deps-debug-1.6.0+cpu\libtorch\include\torch\csrc\api\include\torch\cuda.h(3,10): error C1083: Не удается открыть файл включение: torch/csrc/WindowsTorchApiMacro.h: No such file or directory,
-  (компиляция исходного файла "ConsoleApplication1.cpp")
-  
