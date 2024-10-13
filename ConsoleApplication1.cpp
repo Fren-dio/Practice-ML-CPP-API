@@ -51,29 +51,17 @@ int main(int argc, char* argv[])
 			std::cout << "model was convert to torch tensor\n";
 		
 
-			/*
-			
-			// 3. Execute the model and turn its output into a tensor.
+			// 3. create input data for testing loaded model
+			// Create a vector of inputs.
 			std::vector<torch::jit::IValue> inputs;
-			inputs.push_back(model);
-			torch::NoGradGuard no_grad;
-			torch::Tensor output = model.forward(inputs).toTensor();
+			// now it is just random values, but in future must be input data from other file
+			inputs.push_back(torch::ones({ 1, 4, 45, 223 })); 
 
-			torch::DeviceType cpu_device_type = torch::kCPU;
-			torch::Device cpu_device(cpu_device_type);
-			output = output.to(cpu_device);
-
-			// 4. print tensor's content
-			double tensorSize = torch::elementSize(output);
-			double tensorElementSize = output.element_size();
-			void* ptr = output.data_ptr();
-			for (size_t i = 0; i < tensorSize/tensorElementSize; i++) {
-				std::cout << *((float*)(&ptr + i)) << std::endl;
-			}
-			*/
-		}
-		return 0;
-		
+			// Execute the model and turn its output into a tensor.
+			// start pre-learning model, which was loaded before
+			at::Tensor output = module.forward(inputs).toTensor();
+			std::cout << output.slice(/*dim=*/1, /*start=*/0, /*end=*/5) << '\n';
+		}		
 
 	}
 	catch (const c10::Error& e) {
