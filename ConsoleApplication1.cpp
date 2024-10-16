@@ -19,10 +19,10 @@ bool is_file_exist(std::string fileName)
 int main(int argc, char* argv[])
 {
 	try {
-
-		std::string model_path = "model.pt";  // here it's a argv[1]
+		// here must be .pt file with pre-trained model
+		std::string model_path = "model.pt";
 		//1. load ckpt NNs model
-		//read model from ckpt file 
+		//read model from pt file 
 		torch::jit::script::Module model;
 		model = torch::jit::load(model_path);
 		torch::DeviceType cpuDeviceType = torch::kCPU;
@@ -66,11 +66,14 @@ int main(int argc, char* argv[])
 		// 4. Execute the model and turn its output into a tensor.
 		// start pre-learning model, which was loaded before
 		at::Tensor output = model.forward(inputs).toTensor();
-		std::cout << output.slice(/*dim=*/1, /*start=*/0, /*end=*/5) << '\n';
+		int START_OUTPUT = 0;
+		int FINISH_OUTPUT = 10;
+		std::cout << output.slice(/*dim=*/1, /*start=*/START_OUTPUT, /*end=*/FINISH_OUTPUT) << '\n';
 
 	}
 	catch (const c10::Error& e) {
 		std::cerr << "error loading the model\n";
+		std::cerr << e.what();
 		return -1;
 	}
 	catch (const char* err) {
